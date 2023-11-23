@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>{{ title }}</h1>
+</div>
+
+{% for item in data.values() %}
+<div class="second">
+  <div class="card mx-auto" style="width: 30rem;">
+    <div class="col-auto d-none d-lg-block">
+      <br>
+      <img src="{{ item.img }}" alt="">
+    </div>
+    <div class="col p-4 d-flex flex-column position-static">
+      <h3 class="mb-0">{{ item.number }}. {{ item.name }}</h3>
+      <hr>
+      <p class="card-text mb-auto">{{ item.rating }}</p>
+      <hr>
+      <p class="card-text mb-auto">{{ item.changes }}</p>
+      <hr>
+      <a class="btn btn-primary" href="{{ item.link }}" style="text-decoration: none;">Open IMDB Link</a>
+    </div>
+  </div>
+  <br>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+body{
+    background-image: url("background.jpg") !important;
+    background-size:contain; /* Adjust how the image is displayed */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-attachment: fixed; /* Keep the background image fixed while scrolling */
+}
+
+.container{
+    text-align: center;
+}
+
+.flex-container {
+    margin-top: 5px;
+    display: flex; /* Set the display to flex to create a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 5px;
+}
+
+.title-name
+{
+    border: 1px solid black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+
+.name {
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+.second{
+    margin-top: 50px;
+}
+
+.card{
+    text-align: center;
+    border: 1px solid black !important;
+}
+
+.btn {
+    background-color: black !important;
+    color: white !important;
+    text-align: center;
+    border: 1px solid black !important;
+}
+
+.btn:hover {
+    background-color: white !important;
+    color: black !important;
+    text-align: center;
+    border: 1px solid black !important;
+}
