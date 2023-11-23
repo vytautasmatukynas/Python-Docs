@@ -1,0 +1,15 @@
+body {
+    background-image: url("img/weather_background.jpg") !important;
+    background-size: cover !important;
+}
+
+.card {
+    margin-top: 10%;
+    opacity: 0.95;
+}
+
+.icons{
+    height: 20px;
+    width: 20px;
+}
+
