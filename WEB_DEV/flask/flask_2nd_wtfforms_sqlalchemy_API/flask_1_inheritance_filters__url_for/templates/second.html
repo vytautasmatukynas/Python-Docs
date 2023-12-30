@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block turinys %}
+
+<h1>SECOND PAGE NAME: {{ name }}</h1>
+<!--you can pass in filter like lower and etc., check docs. This is useful, because you don't need to search for
+elements in python code, you can just add filters in html. It's almost same as Python code.-->
+<h1>SECOND PAGE NAME UPPER WITH FILTER: {{ name|upper }}</h1>
+<h1>SECOND PAGE NAME UPPER WITH FILTER: {{ name|capitalize}}</h1>
+
+<!--link to python func-->
+<a href="{{ url_for('home') }}">aaaaa</a>
+
+<!--link to static file, first param is folder that file is in, second is file name-->
+<a href="{{ url_for('static', filename='sample.jpg') }}">aaaaa</a>
+
+{% endblock %}
+
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block turinys %}
+
+<div class="container">
+    <h1>SIGN UP PAGE</h1>
+    <form action="{{ url_for('signed_page') }}">
+        <input type="text" name="first">
+        <input type="text" name="second">
+        <input type="submit" value="Submit form">
+    </form>
+</div>
+
+{% endblock %}

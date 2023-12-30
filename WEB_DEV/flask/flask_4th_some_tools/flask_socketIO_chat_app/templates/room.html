@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="message-box">
+  <h2>Chat Room: {{code}}</h2>
+  <div class="messages" id="messages"></div>
+  <div class="inputs">
+    <input
+      type="text"
+      rows="3"
+      placeholder="Message"
+      name="message"
+      id="message"
+    />
+    <button type="button" name="send" id="send-btn" onClick="sendMessage()">
+      Send
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Establish a connection to the socket.io server
+  var socketio = io();
+
+  // Get the element where messages will be displayed
+  const messages = document.getElementById("messages");
+
+  // Function to create a new message and add it to the display
+  const createMessage = (name, msg) => {
+    // Create the HTML content for a new message
+    const content = `
+    <div class="text">
+        <span>
+            <strong>${name}</strong>: ${msg}
+        </span>
+        <span class="muted">
+            ${new Date().toLocaleString()}
+        </span>
+    </div>
+    `;
+    // Append the message content to the messages container
+    messages.innerHTML += content;
+  };
+
+  // Listen for incoming "message" events from the server
+  socketio.on("message", (data) => {
+    // Call createMessage function to display the incoming message
+    createMessage(data.name, data.message);
+  });
+
+  // Function to send a new message to the server
+  const sendMessage = () => {
+    const message = document.getElementById("message");
+    // Check if the message is not empty
+    if (message.value == "") return;
+    // Emit a "message" event to the server with the message data
+    socketio.emit("message", { data: message.value });
+    // Clear the input field after sending the message
+    message.value = "";
+  };
+</script>
+
+{% for msg in messages %}
+<script type="text/javascript">
+  // Call createMessage function to display each message in the loop
+  createMessage("{{msg.name}}", "{{msg.message}}");
+</script>
+{% endfor %} 
+
+{% endblock %}

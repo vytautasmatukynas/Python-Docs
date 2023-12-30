@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+
+<body>
+
+    <!-- "enctype='multipart/form-data'"
+    when the user selects a file and submits the form, 
+    the browser will encode the form data using the 
+    multipart/form-data format and send it to the server.
+
+    This is necessary because standard URL encoding 
+    (application/x-www-form-urlencoded) used by forms cannot 
+    handle binary data like files. -->
+
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+
+</body>
+
+</html>

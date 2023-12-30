@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>
+    {% if sample %}
+    the sample is {{ sample }}
+    {% else %}
+    please enter sample
+    {% endif %}
+</p>
+
+<form action="" method="post">
+<!--    security method from FlaskForm-->
+    {{ form.hidden_tag() }}
+<!--    stringfield asking for label and inserting form elements-->
+    {{ form.sample.label }} {{ form.sample() }}
+<!--    submit button or whatever-->
+    {{ form.submit() }}
+</form>
+
+</body>
+</html>
