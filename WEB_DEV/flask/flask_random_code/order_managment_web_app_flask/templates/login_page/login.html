@@ -1,0 +1,22 @@
+{% include 'base/header.html' %}
+
+<body>
+    <div class="card mx-auto login-card" style="width: 30rem;">
+        <div class="card-body">
+            <h5 class="card-title">Log In</h5>
+            <hr>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.user.label }} {{ form.user(class='form-control login-form') }}
+                {{ form.password.label }} {{ form.password(class='form-control login-form') }}
+                {% for message in get_flashed_messages() %}
+                <hr>
+                <p class="login-page-p">{{ message }}</p>
+                {% endfor %}
+                <hr>
+                <div class="login-btn-wrapper">
+                    {{ form.submit(class='btn btn-primary login-button') }}
+                </div>
+        </div>
+    </div>
+{% include 'base/footer.html' %}

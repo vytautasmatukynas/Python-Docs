@@ -1,0 +1,7 @@
+FROM python:3.11
+EXPOSE 5000
+WORKDIR /blog_app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["flask", "--app", "/blog_app/app.py", "run", "--debug"]

@@ -1,0 +1,34 @@
+{% extends 'base_pages/base.html' %}
+
+{% block content %}
+
+<div class="container edit-form">
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <form method="post">
+
+        <h1>Change Username</h1>
+        {{ form.hidden_tag() }}
+
+        {{ form.user.label (class="form-group")}}
+        {{ form.user (class='form-control') }}
+        <br>
+        {{ form.password.label (class="form-group")}}
+        {{ form.password (class='form-control')}}
+        <br>
+        {{ form.confirm_password.label (class="form-group")}}
+        {{ form.confirm_password (class='form-control')}}
+        <br>
+        {{ form.submit (class="btn btn-submit")}}
+
+    </form>
+
+</div>
+
+{% endblock %}

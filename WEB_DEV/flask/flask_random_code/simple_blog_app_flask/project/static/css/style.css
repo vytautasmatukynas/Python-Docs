@@ -1,0 +1,265 @@
+body {
+  background-image: url('/static/bg_img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #212121;
+}
+
+.top {
+  background: #6a8db6;
+  height: 180px;
+  margin-top: 80px;
+  padding-top: 5px;
+}
+
+.top .title {
+  width: 800px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.title h1 {
+  font-size: 24px;
+  color: #FFF;
+  font-weight: 500;
+}
+
+.title p strong {
+  color: #FFF;
+  font-size: 20px;
+  border: 1px white solid;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 8px;
+}
+
+.content {
+  margin: -80px auto 100px;
+  padding-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  padding: 50px;
+  width: 500px;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+}
+
+.post-card {
+  position: relative;
+  background: #fff;
+  padding: 50px;
+  width: 600px;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+}
+
+.card h2 {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.card h2 a {
+  color: #CC0000;
+  text-decoration: none;
+}
+
+.card .text {
+  color: #212121;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.card-img-top {
+  border: 1px black solid;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  max-height: 400px;
+  /* Ensure image aspect ratio is maintained */
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #43658b;
+  text-align: center;
+  z-index: 9999;
+}
+
+.navbar-toggler:focus {
+  border: 0 !important;
+  box-shadow: none !important;  
+}
+
+.navbar-toggler {
+   border: 0 !important;
+}
+
+.search-btn {
+  border-radius: 0px;
+  border: 1px white solid;
+  color: white;
+}
+
+.search-btn:hover {
+  border-radius: 0px;
+  border: solid 1px white;
+  color: white;
+}
+
+.search-entry {
+  border-radius: 0px;
+}
+
+.nav-link,
+.navbar-brand {
+  color: white;
+}
+
+.nav-link:hover {
+  border: 1px solid white;
+  margin: -1px;
+  color: white !important;
+}
+
+.dropdown-item:hover {
+  color: white !important;
+  background-color: #43658b;
+}
+
+.dropdown-menu {
+  border: 1px solid #43658b;
+}
+
+form {
+  margin-top: 15%;
+}
+
+.btn-submit,
+.btn-post {
+  background-color: #43658b;
+  color: white;
+}
+
+.btn-submit:hover,
+.btn-post:hover {
+  border: solid 1px #43658b;
+}
+
+.alert {
+  margin-top: 65px;
+  margin-bottom: -70px;
+}
+
+.modal {
+  padding-top: 15%;
+}
+
+.error {
+  padding-top: 15%;
+  text-align: center;
+}
+
+.page-numbers {
+  margin-top: -100px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .alert {
+    margin-top: 120px;
+  }
+
+  .top {
+    margin-top: 120px;
+  }
+
+  .form-inline {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    position: relative;
+    background: #fff;
+    width: 400px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+
+  .post-card {
+    position: relative;
+    background: #fff;
+    width: 500px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+
+  .login-form, .edit-form, .register-form, .post-form {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    position: relative;
+    background: #fff;
+    width: 350px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+
+  .post-card {
+    position: relative;
+    background: #fff;
+    width: 400px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+}
+
+@media (max-width: 410px) {
+  .card {
+    position: relative;
+    background: #fff;
+    width: 330px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+
+  .post-card {
+    position: relative;
+    background: #fff;
+    width: 350px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+  }
+}

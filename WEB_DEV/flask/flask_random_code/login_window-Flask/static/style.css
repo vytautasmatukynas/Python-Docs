@@ -1,0 +1,29 @@
+.login-card{
+    margin-top: 10%;
+}
+
+.login-page-p{
+    color: red;
+    text-align: center;
+}
+
+.login-btn-wrapper{
+    text-align: center !important;
+}
+
+.login-button{
+    border-radius: 0px !important;
+    background-color: black !important;
+    border: None !important;
+    width: 100% !important;
+
+}
+
+.login-button:hover{
+    border: 1px solid black !important;
+    border-radius: 0px !important;
+    background-color: lightgray !important;
+    color: black !important;
+    margin: -1px !important;
+
+}

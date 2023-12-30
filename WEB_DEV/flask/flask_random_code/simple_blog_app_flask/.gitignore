@@ -1,0 +1,8 @@
+__pycache__
+config.py
+config.ini
+.env
+.idea
+blog_venv
+migrations
+**/db_name

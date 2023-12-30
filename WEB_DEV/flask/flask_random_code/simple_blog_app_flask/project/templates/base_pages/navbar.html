@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg">
+
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('main.home')}}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon nti"></span>
+    </button>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        {% if current_user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('main.user_posts', current_user=current_user.id) }}">My Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('posts.post_add') }}">Add Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('log.logout') }}">Log Out</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url_for('user.edit_username', current_user=current_user.id) }}">Change
+                Username</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('user.edit_password', current_user=current_user.id) }}">Change
+                Password</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#del_modal">Delete User</a></li>
+          </ul>
+        </li>
+
+        <div class="modal" tabindex="-1" role="dialog" id="del_modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Delete Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure you want to delete your account? This will delete your account with all posts in it.</p>
+                <form action="{{ url_for('user.delete_user', current_user=current_user.id) }}" method="POST">
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                  <hr>
+                  <input class="btn btn-post" type="submit" value="Delete">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        {% else %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('log.login') }}">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('user.register_user') }}">Register</a>
+        </li>
+
+        {% endif %}
+      </ul>
+    </div>
+
+    <form class="form-inline my-2 my-lg-0" method="post" action="{{ url_for('main.post_search') }}">
+      <div class="input-group">
+        <input class="form-control search-entry" type="search" placeholder="Search" aria-label="Search" name="search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</nav>

@@ -1,0 +1,11 @@
+Flask
+Flask-SqlAlchemy
+Flask-Login
+Flask-Migrate
+Werkzeug
+Jinja2
+Flask-OAuth
+Flask-OAuthlib
+WTForms
+SqlAlchemy
+Flask-WTF

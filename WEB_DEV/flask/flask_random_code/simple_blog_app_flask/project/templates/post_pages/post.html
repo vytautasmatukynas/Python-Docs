@@ -1,0 +1,56 @@
+{% extends 'base_pages/base.html' %}
+
+{% block content %}
+
+<div class="top">
+    <div class="title">
+        <h1><strong>{{ blog_posts.title }}</strong></h1>
+    </div>
+</div>
+
+<div class="content">
+    <div class="card post-card">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='img/' + blog_posts.image)}}" class="card-img-top" alt="...">
+        </div>
+        
+        <hr>
+        <p class="text">{{ blog_posts.text }}</p>
+
+        {% if current_user.is_authenticated and current_user.id == blog_posts.user_id %}
+        <hr>
+        <a class="btn btn-post" href="{{ url_for('posts.post_update', index=blog_posts.id) }}" method="GET">Update</a>
+        <hr>
+        <button type="button" class="btn btn-post" data-bs-toggle="modal"
+            data-bs-target="#del_modal_post">Delete</button>
+
+        <div class="modal" tabindex="-1" role="dialog" id="del_modal_post">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this blog post?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                        <form action="{{ url_for('posts.delete_post', index=blog_posts.id) }}" method="POST">
+                            <input class="btn btn-post" type="submit" value="Delete">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+
+        <hr>
+        <p class="text">Posted: {{ blog_posts.post_date }}</p>
+
+    </div>
+</div>
+
+{% endblock %}
