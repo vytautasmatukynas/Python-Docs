@@ -1,6 +1,0 @@
-flask
-flask-marshmallow
-flask-sqlalchemy
-flask-jwt
-flask-restful
-flask-migrate

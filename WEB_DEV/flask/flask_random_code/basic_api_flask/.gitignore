@@ -1,9 +1,0 @@
-__pycache__
-config.py
-config.ini
-**/instance
-.env
-.idea
-rest_api_venv
-migrations
-**/db_name
