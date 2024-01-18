@@ -1,0 +1,13 @@
+.idea
+__pycache__
+output
+configs
+save
+venv
+bardakas_files
+db_backup
+Create_Table.py
+Edit_DB.py
+.env
+config.ini
+config.py

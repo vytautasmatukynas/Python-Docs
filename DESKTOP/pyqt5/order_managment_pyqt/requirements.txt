@@ -1,0 +1,8 @@
+PyQt5
+pandas
+psycopg2
+xlsxwriter
+UliPlot
+requests
+jinja2
+faker

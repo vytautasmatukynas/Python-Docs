@@ -1,0 +1,6 @@
+pandas
+psycopg2
+xlsxwriter
+PyQt5
+UliPlot
+requests
